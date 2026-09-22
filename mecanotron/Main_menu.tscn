@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bkg7qdatdrrko"]
+
+[ext_resource type="Script" uid="uid://bk44wh7xiwu36" path="res://main_menu.gd" id="1_b07fi"]
+
+[node name="Control" type="Control" unique_id=571577787]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b07fi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=724909064]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1598272102]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1639003958]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=300972163]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "Mecanotron"
+horizontal_alignment = 1
+
+[node name="Playbutton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=958633018]
+layout_mode = 2
+text = "Play"
+
+[node name="Optionsbutton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2021437458]
+layout_mode = 2
+text = "Options"
+
+[node name="Creditsbutton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1148803207]
+layout_mode = 2
+text = "Credits"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Playbutton" to="." method="_on_playbutton_pressed"]

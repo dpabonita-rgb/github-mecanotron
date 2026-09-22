@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dbpo61mbo0svk"]
+
+[ext_resource type="Script" uid="uid://dn7ebylmwa4yr" path="res://mechanotron_player.gd" id="1_ahqp7"]
+[ext_resource type="Texture2D" uid="uid://cn75vglrdub8b" path="res://Mecanotron.png" id="2_54kux"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1k72h"]
+radius = 50.0
+height = 192.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahqp7"]
+radius = 50.0
+height = 188.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=193388029]
+script = ExtResource("1_ahqp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=336174280]
+shape = SubResource("CapsuleShape2D_1k72h")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1975922938]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1313934102]
+shape = SubResource("CapsuleShape2D_ahqp7")
+
+[node name="Mecanotron" type="Sprite2D" parent="." unique_id=653948409]
+texture_filter = 1
+position = Vector2(3, -79)
+scale = Vector2(4.5507813, 5.2265625)
+texture = ExtResource("2_54kux")
