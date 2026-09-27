@@ -6,7 +6,7 @@ extends Area2D
 @export var projectile_scene: PackedScene
 @onready var player = get_tree().get_first_node_in_group("player")
 
-
+var attack_position = [-6, 100, 200]
 var health: int
 
 func _ready() -> void:
@@ -30,12 +30,9 @@ func shoot_projectile() -> void:
 	var projectile = projectile_scene.instantiate()
 	var attack_row = randi_range(0, 2)
 	
-	if attack_row == 0:
-		projectile.global_position = Vector2(global_position.x,-6)
-	elif attack_row == 1:
-		projectile.global_position = Vector2(global_position.x, 100)
-	else:
-		projectile.global_position = Vector2(global_position.x, 200)
+	attack_position.shuffle()
+	var y_position = attack_position[0]
+	projectile.global_position = Vector2(global_position.x, y_position)
 	
 	get_tree().current_scene.add_child(projectile)
 	
