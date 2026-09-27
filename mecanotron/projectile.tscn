@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://4ep2kaeyucca"]
+
+[ext_resource type="Script" uid="uid://q04lfw3hnxfd" path="res://rocket_missile_red.gd" id="1_owtjq"]
+[ext_resource type="Texture2D" uid="uid://cyjeytj37i75x" path="res://Animation pngs/Explosion frame1.png" id="2_q4q4t"]
+[ext_resource type="Texture2D" uid="uid://cddabacwqenij" path="res://Animation pngs/Explosion frame2.png" id="3_tykw2"]
+[ext_resource type="Texture2D" uid="uid://3cbhovk0eppn" path="res://Animation pngs/Explosion frame3.png" id="4_ajp6f"]
+[ext_resource type="Texture2D" uid="uid://65ny07nuwsdk" path="res://Animation pngs/Explosion frame4.png" id="5_0d4cy"]
+[ext_resource type="Texture2D" uid="uid://dijf74oei38yw" path="res://Animation pngs/Explosion frame5.png" id="6_x8r3r"]
+[ext_resource type="Texture2D" uid="uid://ctqm86akerkcx" path="res://Animation pngs/Explosion frame6.png" id="7_d5igw"]
+[ext_resource type="Texture2D" uid="uid://bdupavl50wj6g" path="res://Animation pngs/Explosion frame7.png" id="8_kkou0"]
+[ext_resource type="Texture2D" uid="uid://3xgtp3qevfl8" path="res://Animation pngs/Explosion frame8.png" id="9_hu834"]
+[ext_resource type="Texture2D" uid="uid://ctkj2phs12ovd" path="res://Animation pngs/Explosion frame9.png" id="10_cad87"]
+[ext_resource type="Texture2D" uid="uid://cet1xjjcj2ewa" path="res://Animation pngs/Explosion frame10.png" id="11_ed674"]
+[ext_resource type="Texture2D" uid="uid://d1ssrdq45l6nt" path="res://Animation pngs/Explosion frame11.png" id="12_v4yxo"]
+[ext_resource type="Texture2D" uid="uid://b0uumal88hjx8" path="res://Animation pngs/Missile attack for level 1 boss.png" id="13_1bcxf"]
+[ext_resource type="Texture2D" uid="uid://c6ou0clm0ygg" path="res://Animation pngs/Missile attack frame1.png" id="14_axk8j"]
+[ext_resource type="Texture2D" uid="uid://dgvygas3hsdcq" path="res://Animation pngs/Missile attack frame2.png" id="15_sqa20"]
+[ext_resource type="Texture2D" uid="uid://cnpv1v7hh6x8l" path="res://Animation pngs/Missile attack frame3.png" id="16_fxvd1"]
+[ext_resource type="Texture2D" uid="uid://blqvo561aj45w" path="res://Animation pngs/Missile attack frame4.png" id="17_2mufh"]
+[ext_resource type="Texture2D" uid="uid://bgim02gl0fap" path="res://Animation pngs/Missile attack frame5.png" id="18_xdrmb"]
+[ext_resource type="Texture2D" uid="uid://dtjneop1ny5o3" path="res://Animation pngs/Missile attack frame6.png" id="19_cmt77"]
+[ext_resource type="Texture2D" uid="uid://b03jowa6l3led" path="res://Animation pngs/Missile attack frame7.png" id="20_d2868"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktuax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q4q4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tykw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ajp6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0d4cy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x8r3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d5igw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kkou0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hu834")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cad87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ed674")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v4yxo")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_1bcxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_axk8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sqa20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fxvd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2mufh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xdrmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cmt77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_d2868")
+}],
+"loop": true,
+"name": &"rocket",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jtupi"]
+radius = 45.977715
+height = 150.0776
+
+[node name="Area2D" type="Area2D" unique_id=2102358372]
+script = ExtResource("1_owtjq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1937215465]
+texture_filter = 1
+position = Vector2(155.00002, 30.000002)
+rotation = 0.0031571388
+scale = Vector2(4.9999995, 4.3437505)
+sprite_frames = SubResource("SpriteFrames_ktuax")
+animation = &"rocket"
+frame_progress = 0.47588775
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2012123558]
+position = Vector2(156.00002, 25)
+rotation = -1.5870258
+shape = SubResource("CapsuleShape2D_jtupi")

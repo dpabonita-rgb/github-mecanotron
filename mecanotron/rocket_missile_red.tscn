@@ -1,19 +1,110 @@
 [gd_scene format=3 uid="uid://b5gh01313x7vt"]
 
-[ext_resource type="Texture2D" uid="uid://b0uumal88hjx8" path="res://Missile attack for level 1 boss.png" id="1_q0vjn"]
+[ext_resource type="Texture2D" uid="uid://b0uumal88hjx8" path="res://Animation pngs/Missile attack for level 1 boss.png" id="1_q0vjn"]
 [ext_resource type="Script" uid="uid://q04lfw3hnxfd" path="res://rocket_missile_red.gd" id="1_y57hj"]
+[ext_resource type="Texture2D" uid="uid://cyjeytj37i75x" path="res://Animation pngs/Explosion frame1.png" id="2_vvvyh"]
+[ext_resource type="Texture2D" uid="uid://c6ou0clm0ygg" path="res://Animation pngs/Missile attack frame1.png" id="3_of4e8"]
+[ext_resource type="Texture2D" uid="uid://cddabacwqenij" path="res://Animation pngs/Explosion frame2.png" id="3_utm14"]
+[ext_resource type="Texture2D" uid="uid://dgvygas3hsdcq" path="res://Animation pngs/Missile attack frame2.png" id="4_88wak"]
+[ext_resource type="Texture2D" uid="uid://3cbhovk0eppn" path="res://Animation pngs/Explosion frame3.png" id="4_lnn8u"]
+[ext_resource type="Texture2D" uid="uid://65ny07nuwsdk" path="res://Animation pngs/Explosion frame4.png" id="5_4y77l"]
+[ext_resource type="Texture2D" uid="uid://cnpv1v7hh6x8l" path="res://Animation pngs/Missile attack frame3.png" id="5_t8pq5"]
+[ext_resource type="Texture2D" uid="uid://dijf74oei38yw" path="res://Animation pngs/Explosion frame5.png" id="6_7btx6"]
+[ext_resource type="Texture2D" uid="uid://blqvo561aj45w" path="res://Animation pngs/Missile attack frame4.png" id="6_wfph3"]
+[ext_resource type="Texture2D" uid="uid://bgim02gl0fap" path="res://Animation pngs/Missile attack frame5.png" id="7_mxlw3"]
+[ext_resource type="Texture2D" uid="uid://ctqm86akerkcx" path="res://Animation pngs/Explosion frame6.png" id="7_o374j"]
+[ext_resource type="Texture2D" uid="uid://dtjneop1ny5o3" path="res://Animation pngs/Missile attack frame6.png" id="8_leb2p"]
+[ext_resource type="Texture2D" uid="uid://bdupavl50wj6g" path="res://Animation pngs/Explosion frame7.png" id="8_o5v16"]
+[ext_resource type="Texture2D" uid="uid://b03jowa6l3led" path="res://Animation pngs/Missile attack frame7.png" id="9_dl7we"]
+[ext_resource type="Texture2D" uid="uid://3xgtp3qevfl8" path="res://Animation pngs/Explosion frame8.png" id="9_xa018"]
+[ext_resource type="Texture2D" uid="uid://ctkj2phs12ovd" path="res://Animation pngs/Explosion frame9.png" id="10_k4h3f"]
+[ext_resource type="Texture2D" uid="uid://cet1xjjcj2ewa" path="res://Animation pngs/Explosion frame10.png" id="11_yqs7p"]
+[ext_resource type="Texture2D" uid="uid://d1ssrdq45l6nt" path="res://Animation pngs/Explosion frame11.png" id="12_e7dlr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktuax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vvvyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_utm14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lnn8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4y77l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7btx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o374j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o5v16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xa018")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k4h3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yqs7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e7dlr")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q0vjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_of4e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_88wak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t8pq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wfph3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mxlw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_leb2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dl7we")
+}],
+"loop": true,
+"name": &"rocket",
+"speed": 15.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jtupi"]
-radius = 9.998686
-height = 29.999207
+radius = 45.977715
+height = 150.0776
 
 [node name="Area2D" type="Area2D" unique_id=2102358372]
 script = ExtResource("1_y57hj")
 
-[node name="MissileAttackForLevel1Boss" type="Sprite2D" parent="." unique_id=798944375]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1937215465]
 texture_filter = 1
-position = Vector2(155, 27)
-texture = ExtResource("1_q0vjn")
+position = Vector2(150, 32.499996)
+scale = Vector2(4.9999995, 4.3437505)
+sprite_frames = SubResource("SpriteFrames_ktuax")
+animation = &"rocket"
+frame_progress = 0.60143447
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2012123558]
 position = Vector2(156.00002, 25)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0uumal88hjx8"
-path="res://.godot/imported/Missile attack for level 1 boss.png-e7051d19f3ed702fca390249f0027891.ctex"
+uid="uid://d1ssrdq45l6nt"
+path="res://.godot/imported/Explosion frame11.png-8b12193eb1d805766d1adbce0d773e4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Missile attack for level 1 boss.png"
-dest_files=["res://.godot/imported/Missile attack for level 1 boss.png-e7051d19f3ed702fca390249f0027891.ctex"]
+source_file="res://Animation pngs/Explosion frame11.png"
+dest_files=["res://.godot/imported/Explosion frame11.png-8b12193eb1d805766d1adbce0d773e4e.ctex"]
 
 [params]
 

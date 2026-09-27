@@ -1,29 +1,128 @@
 [gd_scene format=3 uid="uid://dbpo61mbo0svk"]
 
 [ext_resource type="Script" uid="uid://dn7ebylmwa4yr" path="res://mechanotron_player.gd" id="1_ahqp7"]
-[ext_resource type="Texture2D" uid="uid://cn75vglrdub8b" path="res://Mecanotron.png" id="2_54kux"]
+[ext_resource type="Texture2D" uid="uid://b57f7kv6v0f6q" path="res://Animation pngs/Mecanotron Idle Animation1.png" id="2_friro"]
+[ext_resource type="Texture2D" uid="uid://tlhdodnp8d7c" path="res://Animation pngs/Mecanotron Walking Animation1.png" id="3_v1j5a"]
+[ext_resource type="Texture2D" uid="uid://bp0ah3i2uycnk" path="res://Animation pngs/Mecanotron Idle Animation2.png" id="3_ye2p5"]
+[ext_resource type="Texture2D" uid="uid://c0q3hxni8d4l5" path="res://Animation pngs/Mecanotron Walking Animation2.png" id="4_iilf3"]
+[ext_resource type="Texture2D" uid="uid://b1o1mnvlgsfhn" path="res://Animation pngs/Mecanotron Idle Animation3.png" id="4_n1odh"]
+[ext_resource type="Texture2D" uid="uid://ci00ht88gmqs2" path="res://Animation pngs/Mecanotron Idle Animation4.png" id="5_rsrxo"]
+[ext_resource type="Texture2D" uid="uid://bfug1odcm38bq" path="res://Animation pngs/Mecanotron Walking Animation3.png" id="5_uu6ir"]
+[ext_resource type="Texture2D" uid="uid://3pr74oaa6ohk" path="res://Animation pngs/Mecanotron Walking Animation4.png" id="6_f0r3y"]
+[ext_resource type="Texture2D" uid="uid://bhv0yvej6jlrm" path="res://Animation pngs/Mecanotron Idle Animation5.png" id="6_m0ahv"]
+[ext_resource type="Texture2D" uid="uid://hp5kwybxtd6o" path="res://Animation pngs/Mecanotron Idle Animation6.png" id="7_61obh"]
+[ext_resource type="Texture2D" uid="uid://xniumfkxfbuv" path="res://Animation pngs/Mecanotron Walking Animation5.png" id="7_cumuu"]
+[ext_resource type="Texture2D" uid="uid://l5mve1tt5oxu" path="res://Animation pngs/Mecanotron Slashing Animation1.png" id="8_04j6w"]
+[ext_resource type="Texture2D" uid="uid://dr3bmfmjnenwa" path="res://Animation pngs/Mecanotron Slashing Animation2.png" id="9_16tcx"]
+[ext_resource type="Texture2D" uid="uid://bjhn42fa8il52" path="res://Animation pngs/Mecanotron Slashing Animation3.png" id="10_kg7sc"]
+[ext_resource type="Texture2D" uid="uid://dtq1b78wgb3mv" path="res://Animation pngs/Mecanotron Slashing Animation4.png" id="11_3u3ax"]
+[ext_resource type="Texture2D" uid="uid://ej2wf8ked7kr" path="res://Animation pngs/Mecanotron Slashing Animation5.png" id="12_03yb8"]
+[ext_resource type="Texture2D" uid="uid://b7yas0wjv2swp" path="res://Animation pngs/Mecanotron Slashing Animation6.png" id="13_opta3"]
+[ext_resource type="Texture2D" uid="uid://n4fydrpus5y4" path="res://Animation pngs/Mecanotron Slashing Animation7.png" id="14_8no1j"]
+[ext_resource type="Texture2D" uid="uid://dv26762688plu" path="res://Animation pngs/Mecanotron Slashing Animation8.png" id="15_ttdhn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1k72h"]
-radius = 50.0
+radius = 49.0
 height = 192.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahqp7"]
-radius = 50.0
-height = 188.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_friro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_friro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ye2p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n1odh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rsrxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m0ahv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_61obh")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_04j6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_16tcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kg7sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3u3ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_03yb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_opta3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8no1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ttdhn")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v1j5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iilf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uu6ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f0r3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cumuu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=193388029]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh04n"]
+size = Vector2(93.25, 185)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=193388029 groups=["player"]]
 script = ExtResource("1_ahqp7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=336174280]
+position = Vector2(5, 2)
 shape = SubResource("CapsuleShape2D_1k72h")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1975922938]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1313934102]
-shape = SubResource("CapsuleShape2D_ahqp7")
-
-[node name="Mecanotron" type="Sprite2D" parent="." unique_id=653948409]
+[node name="Mecanotron" type="AnimatedSprite2D" parent="." unique_id=1624364182]
 texture_filter = 1
-position = Vector2(3, -79)
-scale = Vector2(4.5507813, 5.2265625)
-texture = ExtResource("2_54kux")
+position = Vector2(2, -62)
+scale = Vector2(4.7968745, 5.022156)
+sprite_frames = SubResource("SpriteFrames_friro")
+animation = &"walk"
+
+[node name="AttackArea" type="Area2D" parent="Mecanotron" unique_id=1975922938]
+position = Vector2(-0.41693816, 12.345296)
+scale = Vector2(0.20846908, 0.19911768)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mecanotron/AttackArea" unique_id=1313934102]
+position = Vector2(98.375, 3.5)
+shape = SubResource("RectangleShape2D_bh04n")
+
+[connection signal="area_entered" from="Mecanotron/AttackArea" to="." method="_on_attack_area_area_entered"]
